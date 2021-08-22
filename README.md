@@ -24,10 +24,11 @@
 
 2. 获取 authorization_code
    
-   浏览器访问 `https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/drive&response_type=code&access_type=offline&redirect_uri=http://localhost&client_id={client_id}`，注意将 client_id 替换，访问后可在地址栏获取 authorization_code
+   浏览器访问 `https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/drive&response_type=code&access_type=offline&redirect_uri=http://localhost&client_id={client_id}`，注意将 client_id 替换。访问后进行账户登录和应用授权，在重定向地址 `http://localhost?code=xxxxxx&client_id=xxxxxx` 中可获取 authorization_code
 
 3. 获取 refresh_token
    
+   向 `https://oauth2.googleapis.com/token` 发送 POST 请求，注意替换请求体中的相应参数
    ```http
    POST /token HTTP/1.1
    Host: oauth2.googleapis.com
@@ -39,6 +40,8 @@
    redirect_uri=http://localhost
    grant_type=authorization_code
    ```
+
+   在响应 JSON 中可获取 refresh_token
 
    ```http
    {
