@@ -12,8 +12,13 @@
 #### Cloudflare Workers
 
 1. 安装 wrangler
+
+   ```shell
+   npm i @cloudflare/wrangler -g
+   ```
+
 2. 将项目根目录下 wrangler.default.toml 文件复制为 wrangler.toml
-3. 填入 account_id
+3. 访问 [https://dash.cloudflare.com/](https://dash.cloudflare.com/) ，将账户 ID 填入 account_id 字段中
 4. 在根目录运行 `wrangler kv:namespace create "KV"` 创建 KV 空间，并将其 id 填入文件中
    
 #### Google Drive
@@ -73,10 +78,12 @@
 
 ## 参考内容
 
-1. [Google Drive API v3](https://developers.google.com/drive)
-2. RFC 4918 (WebDAV revision) [原文](http://www.webdav.org/specs/rfc4918.html), [中文文档](https://fullstackplayer.github.io/WebDAV-RFC4918-CN/)
-3. [WebDAV Methods | Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2003/aa142917(v=exchg.65))
-4. [CloudFlare Workers KV API](https://developers.cloudflare.com/workers/runtime-apis/kv)
+1. [fetch API](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
+2. [Google Drive API v3](https://developers.google.com/drive)
+3. RFC 4918 (WebDAV revision) [原文](http://www.webdav.org/specs/rfc4918.html)
+   , [中文文档](https://fullstackplayer.github.io/WebDAV-RFC4918-CN/)
+4. [WebDAV Methods | Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2003/aa142917(v=exchg.65))
+5. [CloudFlare Workers KV API](https://developers.cloudflare.com/workers/runtime-apis/kv)
 
 ## 许可
 
