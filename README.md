@@ -12,18 +12,18 @@
 #### Cloudflare Workers
 
 1. 安装并配置 wrangler
-   ```shell
+   ```bash
    npm i @cloudflare/wrangler -g
-   wrangler config
+   # yarn global add @cloudflare/wrangler
    ```
-   填入 `Cloudflare API Token`
+   访问 [https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens) 新建 API 令牌，使用“编辑 Cloudflare Workers”模板，勾选`Workers 脚本`、`Workers KV 存储`、`Workers 路由`的编辑权限。新建完毕后投放此令牌。
 
-2. 将项目根目录下 `wrangler.default.toml` 文件复制为 `wrangler.toml`
+   运行 `wrangler config` 填入刚才生成的令牌。
 
-3. 访问 [https://dash.cloudflare.com/](https://dash.cloudflare.com/) ，将账户 ID 填入 account_id 字段中
+2. 将项目根目录下 `wrangler.default.toml` 文件复制为 `wrangler.toml`。访问 [https://dash.cloudflare.com/](https://dash.cloudflare.com/) ，将账户 ID 填入 account_id 字段中
 
 4. 在根目录运行
-   ```shell
+   ```bash
    wrangler kv:namespace create "KV"
    ```
    创建 KV 空间，并将输出中的 id 填入 `wrangler.toml` 文件中
